@@ -1,24 +1,7 @@
-# PhD dissertation
+# Thesis_LatexTemplate
 
-## TO DO List:
 
-### Frontmatter
-* Create Cover Page
-* Write Dedication and Acknowledgments
-* Write Nomenclature
-### Mainmatter
-* Introduction
-    + Setup theme
-    + Setup Structure
-* Literature Review
-* Methodology
-* Results
-* Discussion
-* Conclusions
-* Limitations and Future Work
+I recommend to use https://miktex.org/download and https://www.texstudio.org/ as main tools to create your thesis/dissertation. 
 
-### Bibliography
-* Check for update bibliography
-* Bibliography settings
-
+Mendeley https://www.mendeley.com/ has an easy exporter for the bibliography
 
