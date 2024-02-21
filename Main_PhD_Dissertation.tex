@@ -1,0 +1,176 @@
+\documentclass[english, a4paper, twoside,11pt]{report}
+\renewcommand{\baselinestretch}{1.15} 
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{nomencl}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+
+\makenomenclature
+
+\usepackage{natbib}
+\bibliographystyle{apa}
+
+
+\pagenumbering{arabic}
+
+\raggedbottom
+
+\usepackage[a4paper,bindingoffset=6mm,%
+left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+
+\usepackage{amsmath}
+\usepackage{color,pxfonts,fix-cm}
+\usepackage{latexsym}
+\usepackage[mathletters]{ucs}
+\DeclareUnicodeCharacter{32}{$\ $}
+\DeclareUnicodeCharacter{58}{$\colon$}
+\usepackage[T1]{fontenc}
+
+\usepackage{indentfirst}
+\usepackage{hyphenat}
+\usepackage{mathpazo} % Palatino font
+\usepackage{abstract}
+\renewcommand{\abstractnamefont}{\normalfont\large\bfseries}
+
+
+%header and footer
+\usepackage{fancyhdr} 
+\fancyhf{}
+\cfoot{\thepage}
+\pagestyle{fancy}
+
+
+
+%self references
+\usepackage{hyperref}
+
+
+
+\makeatletter
+
+\newcommand\frontmatter{%
+	\cleardoublepage
+	%\@mainmatterfalse
+	\pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+	\cleardoublepage
+	% \@mainmattertrue
+	\pagenumbering{arabic}}
+
+\newcommand\backmatter{%
+	\if@openright
+	\cleardoublepage
+	\else
+	\clearpage
+	\fi
+	% \@mainmatterfalse
+}
+
+\makeatother
+
+
+
+
+
+\usepackage{geometry}
+%\usepackage{pict2e}
+%\usepackage{wasysym}
+
+\usepackage{tikz}
+\pagestyle{empty}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+\makeindex
+
+
+%paragraph
+\setlength{\parindent}{8ex}
+
+%For the cover
+\usepackage{pdfpages}
+\usepackage{pdflscape}
+
+
+\begin{document}
+	
+	%% Frontmatter
+	
+	%title page
+	\subfile{1_Cover/titlePage}
+	
+	\frontmatter
+	
+	\subfile{2_FrontMatter/Dedication}
+	
+	%Acknowledgments
+	\subfile{2_FrontMatter/Acknowledgments}
+	
+	
+	%abstract
+	\subfile{2_FrontMatter/Abstract}
+	
+	
+	
+	%index
+	\tableofcontents % Prints the main table of contents
+	
+	%list of figures
+	
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of Figures}
+	
+	%list of tables
+	\listoftables
+	\addcontentsline{toc}{chapter}{List of Tables}
+	
+	%AbbreviationsNomenclature
+	%abstract
+	\subfile{2_FrontMatter/AbbreviationsNomenclature}
+	
+	%% Mainmatter
+	
+	\mainmatter
+	
+	
+	%chapters
+	
+	%chapter 1 - Introduction
+	\subfile{3_Chapters/Chapter1}
+	
+	%chapter 2 - Theoretical Background
+	\subfile{3_Chapters/Chapter2}
+	
+	%chapter 3 - Methodology
+	\subfile{3_Chapters/Chapter3}
+	
+	%chapter 4 - Results 
+	\subfile{3_Chapters/Chapter4}
+	
+	%chapter 5 - Discussion 
+	\subfile{3_Chapters/Chapter5}
+	
+	%chapter 6-   CONCLUSIONS
+	\subfile{3_Chapters/Chapter6}
+	
+	%chapter 7.	LIMITATIONS AND RECOMMENDATIONS FOR FUTURE WORKS
+	\subfile{3_Chapters/Chapter7}
+	
+	
+	%% Bibliography
+	%bibliography
+	%\bibliographystyle{apa}
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\bibliography{4_Bibliography/library.bib}
+	
+	
+	
+	
+\end{document}	
